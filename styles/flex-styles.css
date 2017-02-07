@@ -1,0 +1,129 @@
+body {
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	min-height: 100vh;
+}
+nav {
+	background: rgb(74,74,74); 
+	flex: 0 0 270px;
+}
+body>div {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	margin: 0 60px;
+}
+p {
+	text-indent: 1cm;
+	margin: 0;
+}
+h1 {
+	text-transform: capitalize;
+	margin: 40px 0 20px;
+}
+.menu, .menu ul {
+	list-style-type: none;
+	padding: 0; 
+	margin: 0;
+	font-size: 0;
+}
+.menu {
+	text-align: left;
+}
+.menu a {
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 14pt;
+	color: #fff;
+	display: block;
+	padding: 15px 0 15px 10px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.menu li:hover > a {
+	color: #000;
+	background: #ccc;
+}
+.menu a::before {
+	display: inline-block;
+	text-align: center;
+	width: 60px;
+	color: red;
+}
+.menu a::after {
+	color: red;
+}
+a[href="#main"]::before {
+	content: '\262D';
+	}
+a[href="#about"]::before {
+	content: '\003F \003F';
+}
+a[href="#contacts"]::before {
+	content: '\260E';
+}
+a[href="https://www.facebook.com"]::before {
+	content: '\0066';
+	text-transform: lowercase;
+}
+a[target="_blank"]::after {
+	content: ' \2197';
+}
+@media all and (min-width: 481px) and (max-width: 720px) {
+	nav { 
+	flex: 0 0 60px;
+	}
+	.menu a {
+	padding: 15px 0;
+	width: 60px;
+	}
+	body>div {
+	margin: 0 40px;
+	}
+}
+@media all and (max-width: 480px) {
+	body {
+	flex-direction: column;
+	}
+	nav { 
+	flex: 0 0 35px;
+	}
+	.menu li {
+	display: inline-block;
+	width: 25%;
+	}
+	.menu a {
+	padding: 0;
+	height: 35px;
+	}
+	.menu a::before {
+	display: block;
+	height: 30px;
+	width: 100%;
+	padding: 5px 0 0;
+	}
+	body>div {
+	margin: 0 20px;
+	}
+	h1 {
+	text-transform: capitalize;
+	margin: 20px 0 20px;
+}
+}
+div>div:not(:last-child ) {
+	display: none;
+}
+div>div:target~div {
+	display: none;
+}
+#main:target {
+	display: block;
+}
+#about:target {
+	display: block;
+}
+#contacts:target {
+	display: block;
+}
+
